@@ -93,7 +93,7 @@ class App extends PureComponent {
         const urlPromise = urls.map(url => this.fetchAndProcess(url));
         Promise.all(urlPromise)
             .then(() => {
-                this.setState(prevState => ({ isLoading: false, lastRefresh: Date.now(), notif: prevState.shouldNotify }));
+                this.setState(prevState => ({ isLoading: false, lastRefresh: Date.now(), notif: prevState.shouldNotify, shouldNotify: false }));
                 setTimeout(() => this.setState({notif: false}), 300);
             })
             .catch(err => console.log(err));
