@@ -7,7 +7,7 @@
     font-weight: bold;
 }
 
-#finished {
+.finished {
     font-size: 19px;
     font-weight: bold;
     text-decoration: underline;
@@ -33,39 +33,10 @@
     margin-right: 5px;
 }
 
-.form-elem:first-of-type {
+.form-elem:first-child {
     height: 30px;
-    padding: 5px 5px 5px 0;
+    padding: 5px;
     margin-right: 5px;
-}
-
-#products {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#products td, #products th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: right;
-}
-
-#products tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#products tr:hover {
-    background-color: #ddd;
-}
-
-#products th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
 }
 
 .gone {

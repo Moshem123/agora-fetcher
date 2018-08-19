@@ -45,7 +45,7 @@ class Notif extends PureComponent {
     };
 
     render() {
-
+        const postId = this.props.tag.split('_')[0];
         return (
             <div>
                 <Notification
@@ -56,16 +56,15 @@ class Notif extends PureComponent {
                     onShow={this.handleNotificationOnShow}
                     onClick={this.handleNotificationOnClick}
                     onError={this.handleNotificationOnError}
-                    timeout={99999}
+                    timeout={20000}
                     title='Agora Fetcher'
                     options={{
                         tag: this.props.tag,
-                        body: 'An item was refreshed! Click here to see',
+                        body: `Item ${postId} was refreshed! Click here to see`,
                         icon: 'https://pbs.twimg.com/profile_images/378800000012301205/41391c5622793f1178a2c472028deb58_400x400.jpeg',
                         lang: 'en',
                         dir: 'ltr',
-                        sound: './sound.mp3',
-                        requireInteraction: true
+                        sound: './sound.mp3'
                     }}
                 />
                 <audio id='sound' preload='auto'>
