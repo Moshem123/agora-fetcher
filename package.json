@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "start-server": "node app.js",
     "dev": "run-p start-server start",
-    "postbuild": "run-s now-start",
+    "build-and-test": "run-s build now-start",
     "now-start": "cross-env NODE_ENV=production node app.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

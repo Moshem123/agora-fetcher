@@ -9,6 +9,9 @@ Start the development backend part - for proxy
 Runs both start and start-server on parallel
 
 ### `yarn build`
+Builds the production copy of the application
+
+### `yarn build-and-test`
 Builds the production copy of the application, and starts the server to test before deployment
 
 ### `yarn deploy`

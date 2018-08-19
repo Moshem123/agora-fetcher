@@ -119,6 +119,8 @@ class App extends PureComponent {
                 const numFetched = e.filter(e => e).length;
                 this.setState(prevState => ({ isLoading: false, notif: prevState.shouldNotify, shouldNotify: false, numFetched }));
                 setTimeout(() => this.setState({ notif: false }), 300);
+                this.sortCol({currentTarget: {id: "t_postId"}});
+                // event.currentTarget.id.replace('t_', '');
             })
             .catch(err => console.log(err));
     };
