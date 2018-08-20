@@ -41,9 +41,9 @@ const Table = ({ items, clearTable, isLoading, sortFunc, alreadySorted, changeRe
                                 <a href={"https://www.agora.co.il/map.asp?id=" + e.postId} target='_blank'>Map</a>
                             </td>
                             <td>
-                                <a href={'https://www.agora.co.il/' + e.bigImg} target='_blank'>
+                                {e.smallImg && <a href={'https://www.agora.co.il/' + e.bigImg} target='_blank'>
                                     <img src={'https://www.agora.co.il/' + e.smallImg} alt=""/>
-                                </a>
+                                </a>}
                             </td>
                             <td>
                                     <input
