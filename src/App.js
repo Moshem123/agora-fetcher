@@ -41,7 +41,6 @@ class App extends PureComponent {
         if (alreadySorted.field === col && alreadySorted.dir === "asc") {
             newDir = "desc";
         }
-        ;
         const orderedItems = orderBy(items, col, newDir);
         this.setState({ alreadySorted: { field: col, dir: newDir }, items: orderedItems })
     };
@@ -106,8 +105,6 @@ class App extends PureComponent {
                 }
                 this.setState(setStateObj);
                 return true;
-                //debugger;
-                // return {url, title, details, postId, alreadyGone, bigImg, smallImg};
             });
     };
 
@@ -117,10 +114,9 @@ class App extends PureComponent {
         Promise.all(urlPromise)
             .then(e => {
                 const numFetched = e.filter(e => e).length;
-                this.setState(prevState => ({ isLoading: false, notif: prevState.shouldNotify, shouldNotify: false, numFetched }));
+                this.setState(prevState => ({ isLoading: false, notif: prevState.shouldNotify, shouldNotify: false, numFetched, alreadySorted: { field: '', dir: '' } }));
                 setTimeout(() => this.setState({ notif: false }), 300);
-                this.sortCol({currentTarget: {id: "t_postId"}});
-                // event.currentTarget.id.replace('t_', '');
+                this.sortCol({currentTarget: {id: "t_postId"}}); // Default sorting by postId
             })
             .catch(err => console.log(err));
     };
