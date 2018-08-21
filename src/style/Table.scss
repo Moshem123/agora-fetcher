@@ -1,0 +1,67 @@
+.sort-up {
+  left: 3px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  margin: 4px 4px 0 3px;
+  background: transparent;
+  border-bottom: solid 7px #000;
+  border-top-width: 0;
+}
+
+.sort-down {
+  left: 3px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  margin: 4px 4px 0 3px;
+  background: transparent;
+  border-top: solid 7px #000;
+  border-bottom-width: 0;
+}
+
+#products {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: right;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #ddd;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    &:not(:nth-last-of-type(-n+2)) {
+      cursor: pointer;
+    }
+/*    &:last-child {
+      flex-direction: row-reverse;
+      width: 8%;
+    }*/
+  }
+  td {
+    span[data-type] {
+      cursor: pointer;
+    }
+/*    &:last-child {
+      flex-direction: row-reverse;
+      width: 8%;
+    }*/
+  }
+  input[type="number"] {
+    padding: 4px;
+    width: 100%;
+  }
+}

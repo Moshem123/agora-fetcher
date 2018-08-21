@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/Table.css';
+import '../style/ResponsiveTable.css';
 
 const Table = ({ items, clearTable, isLoading, sortFunc, alreadySorted, changeRefresh, applyCancelRefresh }) => {
     const headers = [
@@ -56,7 +57,6 @@ const Table = ({ items, clearTable, isLoading, sortFunc, alreadySorted, changeRe
                                         onChange={changeRefresh}/>
                                     <span role="img" aria-label="V" data-type="apply" data-postid={e.postId} onClick={applyCancelRefresh}>&#9989;</span>
                                     <span role="img" aria-label="X" data-type="cancel" data-postid={e.postId} onClick={applyCancelRefresh}>&#10060;</span>
-                                <br/>
                                 {e.settings.lastRefreshInWords !== "" && <div>
                                     Last Refresh: {e.settings.lastRefreshInWords}
                                 </div>}

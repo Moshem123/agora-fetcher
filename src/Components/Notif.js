@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Notification from 'react-web-notification';
-import soundMp3 from '../sounds/sound.mp3';
-import soundOgg from '../sounds/sound.ogg';
+import soundMp3 from '../sounds/alarm.mp3';
+import soundOgg from '../sounds/alarm.ogg';
 
 class Notif extends PureComponent {
     state = {

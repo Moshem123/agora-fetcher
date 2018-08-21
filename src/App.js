@@ -109,7 +109,7 @@ class App extends PureComponent {
     };
 
     getAllTitles = urls => {
-        this.setState({ isLoading: true });
+        this.setState({ isLoading: true, numFetched: -1 });
         const urlPromise = urls.map(url => this.fetchAndProcess(url));
         Promise.all(urlPromise)
             .then(e => {
@@ -249,19 +249,17 @@ class App extends PureComponent {
     };
 
     render() {
-        const { notif, items, isLoading, alreadySorted, notifyPostId } = this.state;
+        const { notif, items, isLoading, alreadySorted, notifyPostId, numFetched } = this.state;
         return (
             <div className="App">
-                <Notif
-                    ignore={!notif}
-                    tag={notifyPostId}/>
                 <Form
                     {...this.state}
                     handleInputChange={this.handleInputChange}
                     submitForm={this.submitForm}
                 />
-                <br/>
-                <br/>
+                {numFetched !== -1 && <div>
+                    <span className='finished'>Fetched {numFetched} titles!</span>
+                </div>}
                 <Table
                     items={items}
                     isLoading={isLoading}
@@ -270,6 +268,9 @@ class App extends PureComponent {
                     sortFunc={this.sortCol}
                     changeRefresh={this.changeRefresh}
                     applyCancelRefresh={this.applyCancelRefresh}/>
+                <Notif
+                    ignore={!notif}
+                    tag={notifyPostId}/>
             </div>
         );
     }

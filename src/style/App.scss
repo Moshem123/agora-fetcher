@@ -1,0 +1,86 @@
+@import "normalize.css";
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-flow: column wrap;
+
+  & > * {
+    margin: 10px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    font-size: x-large;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=text], input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}*/
+
+.postTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.finished {
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#get-titles {
+  display: flex;
+  align-items: center;
+  @media (max-width: 600px) {
+    flex-flow: column nowrap;
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.num-input {
+  width: 60px;
+}
+
+#start-url {
+  width: 350px;
+}
+
+.form-elem {
+  height: 30px;
+  padding: 5px;
+  margin-right: 5px;
+
+  &:first-child {
+    height: 30px;
+    padding: 5px 5px 5px 0;
+    margin-right: 5px;
+  }
+}
+
+.gone {
+  color: red;
+}
